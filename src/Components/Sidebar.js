@@ -9,7 +9,6 @@ export default props => {
     <Menu>
         <Link onClick={<Menu isOpen={ false } />} to="/" className="menu-item">Home</Link>
         <Link onClick={<Menu isOpen={ false } />}to="/Appetizer" className="menu-item">Appetizers</Link>
-        <Link onClick={<Menu isOpen={ false } />}to="/Salad" className="menu-item">Salads</Link>
         <Link onClick={<Menu isOpen={ false } />}to="/MainCourse" className="menu-item">Main Courses</Link>
         <Link onClick={<Menu isOpen={ false } />}to="/Dessert" className="menu-item">Desserts</Link>
     </Menu>

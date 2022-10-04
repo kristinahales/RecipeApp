@@ -1,10 +1,11 @@
 import React from 'react';
+import './AllCss.css';
 
 class Home extends React.Component {
     render() {
-      return   <div id="page-wrap">
-      <h1>Cool Restaurant</h1>
-      <h2>Check out our offerings in the sidebar!</h2>
+      return   <div>
+      <div className="main-header">My Recipes</div>
+      <h2 className='home-header'>Hi my name is Kristina Hales, Software Engineer. I'm a wife. mom, and foodie enthusiast. <br/> Click the sidebar to get a list of recipe ideas!</h2>
     </div>
     }
   }

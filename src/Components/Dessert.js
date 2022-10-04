@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
+import './AllCss.css';
 
 Modal.setAppElement('#root');
 
@@ -39,17 +40,17 @@ class Dessert extends React.Component {
     const {dessertArray, selectedItem} = this.state;
     if(this.state.selectedItem != null) {
       return (
-        <div>
-          <h1>{dessertArray[selectedItem].name}</h1>
-          <img height='500px' width='500px' src={dessertArray[selectedItem].image}/>
-          <h3>Ingredients:</h3>
+        <div className='recipe-details-container'>
+          <p className='recipe-details-name-section'>{dessertArray[selectedItem].name}</p>
+          <img height='250px' width='300px' src={dessertArray[selectedItem].image}/>
+          <p className='recipe-details-section'>Ingredients:</p>
           {dessertArray[selectedItem].ingredients.map((ingredient,id) => {
-            return (<p key={id}>{ingredient}</p>)
+            return (<li key={id}>{ingredient}</li>)
           })} 
-          
-          <h3>Directions:</h3>
+
+          <p className='recipe-details-section'>Directions:</p>
           {dessertArray[selectedItem].directions.map((direction,id) => {
-            return (<p key={id}>{direction}</p>)
+            return (<li className='recipe-direction-list' key={id}>{direction}</li>)
           })}
         </div>
       )
@@ -59,21 +60,24 @@ class Dessert extends React.Component {
 
     render() {
       let {modalIsOpen, dessertArray} = this.state;
-        return  <div id="page-wrap">
-                  <h1>Desserts</h1>
+        return  <div>
+                  <div className="main-header">Desserts</div>
+                  <div className='main-container'>
                   {dessertArray.map((dessert, id) => {
                     return (
-                      <div className='container' key={id}>
-                        <img height='500px' width='500px' src={dessert.image}/> 
-                        <button height='200px' onClick={() => {this.openModal(id)} }>{dessert.name}</button> 
+                      <div className='recipe-container' key={id}>
+                        <p className='recipe-name'>{dessert.name}</p>
+                        <img height='250px' width='300px' src={dessert.image}/> 
+                        <button className='recipe-button' onClick={() => {this.openModal(id)} }>Recipe</button> 
                       </div> 
                     ) 
                    })                        
                   }
+                  </div>
                   <Modal isOpen={modalIsOpen} onRequestClose={this.closeModal}>
                     <div>
                       {this.renderModal()}
-                      <button onClick={this.closeModal}>close</button>
+                      <button className='modal-close-button' onClick={this.closeModal}>Close</button>
                     </div>
                   </Modal>   
                 </div>         
