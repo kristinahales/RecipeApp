@@ -67,7 +67,7 @@ class MainCourse extends React.Component {
                     return (
                       <div className='recipe-container' key={id}>
                         <p className='recipe-name'>{mc.name}</p>
-                        <img height='250px' width='300px' src={mc.image}/> 
+                        <img height='250px' width='280px' src={mc.image}/> 
                         <button className='recipe-button' onClick={() => {this.openModal(id)} }>Recipe</button> 
                       </div> 
                     ) 

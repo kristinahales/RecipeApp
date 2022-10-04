@@ -42,7 +42,7 @@ class Dessert extends React.Component {
       return (
         <div className='recipe-details-container'>
           <p className='recipe-details-name-section'>{dessertArray[selectedItem].name}</p>
-          <img height='250px' width='300px' src={dessertArray[selectedItem].image}/>
+          <img height='250px' width='280px' src={dessertArray[selectedItem].image}/>
           <p className='recipe-details-section'>Ingredients:</p>
           {dessertArray[selectedItem].ingredients.map((ingredient,id) => {
             return (<li key={id}>{ingredient}</li>)
